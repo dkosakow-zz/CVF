@@ -24,6 +24,9 @@ public class Material {
     private boolean allowEdit = false;      //allow user to edit, kind of like administrator privileges
     private Type type;                      //Isotropic, Transverse, Orthotropic, or Anisotropic
 
+    private double[][] complianceTensor = new double[6][6];
+    private double[][] stiffnessTensor = new double[6][6];
+
     public enum Type {
         //Constants
         ISOTROPIC("isotropic"),
@@ -40,9 +43,13 @@ public class Material {
 
     public Material() {
         this.name = "New Material";
-        this.allowEdit = false;
     }   //empty constructor
 
+    public class ComplianceTensor {
+
+    }
+
+    //<editor-fold desc="Getters and Setters">
     public String getName() {
         return name;
     }   //getName()
@@ -162,8 +169,15 @@ public class Material {
     public void setType(Type type) {
         this.type = type;
     }   //setType()
+    //</editor-fold>
 
     //Default Materials
-
+    Material Carbon = new Material();
+    Material Kevlar = new Material();
+    Material A42 = new Material();
+    Material Grafil70034 = new Material();
+    Material EGlass = new Material();
+    Material SGlass = new Material();
+    Material Basalt = new Material();
 }   //class Material
 
