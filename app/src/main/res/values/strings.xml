@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">CVF</string>
+
+    <string name="button1">Continuous</string>
+    <string name="button1desc">Continuous button</string>
+    <string name="button2">SFRP</string>
+    <string name="button2desc">SFRP button</string>
+    <string name="button3">Laminate</string>
+    <string name="button3desc">Laminate button</string>
+
+    <string name="tab1_1">Material Definitions</string>
+    <string name="tab1_2">Homogenized Properties</string>
+
+    <string name="logo">CVF Logo</string>
+
+    <string name="clear">Clear</string>
+    <string name="settings">Settings</string>
+    <string name="home">home</string>
+    <string name="convert">Convert</string>
+    <string name="fiber_content_by">Fiber Content by:</string>
+    <string name="matrix_material">Matrix Material:</string>
+    <string name="weight">Weight</string>
+    <string name="fiber_material">Fiber Material:</string>
+    <string name="volume">Volume</string>
+    <string name="density">Density:</string>
+    <string name="microstructure">Microstructure</string>
+    <string name="materials">Materials</string>
+    <string name="properties">Homogenized\nProperties</string>
+    <string name="fiber_volume_fraction">Fiber Volume Fraction:</string>
+    <string name="fiber_weight_fraction">Fiber Weight Fraction:</string>
+    <string name="material_properties">View Material Properties</string>
+    <string name="e1">E1 =</string>
+    <string name="e2">E2 =</string>
+    <string name="v12">v12 =</string>
+    <string name="g12">G12 =</string>
+    <string name="v23">v23 =</string>
+    <string name="a1">a1 =</string>
+    <string name="a2">a2 =</string>
+    <string name="a3">a3 =</string>
+    <string name="p">ρ =</string>
+    <string name="propertiesTitle">Properties</string>
+    <string name="textview">TextView</string>
+    <string name="visualize">Visualize</string>
+    <string name="visualization">Visualization</string>
+    <string name="aspect_ratio">Aspect Ratio:</string>
+    <string name="material_manager">Material Manager</string>
+    <string name="filler_material">Filler Material:</string>
+    <string name="orientation">Orientation:</string>
+    <string name="v13">v13 =</string>
+    <string name="g23">G23 =</string>
+    <string name="g13">G13 =</string>
+    <string name="e3">E3 =</string>
+    <string name="change_orientation">Change Orientation</string>
+    <string name="orientation_manager">Orientation Manager</string>
+    <string name="filler_content_by">Filler Content by:</string>
+    <string name="filler_volume_fraction">Filler Volume Fraction:</string>
+    <string name="filler_weight_fraction">Filler Weight Fraction:</string>
+    <string name="add_material">Add Material</string>
+    <string name="allow_edit">Allow Edit</string>
+
+
+    <string-array name="orientations">
+        <item>Unidirectional</item>
+        <item><b>2</b>D random</item>
+        <item><b>3</b>D random</item>
+        <item>User Defined</item>
+    </string-array>
+
+    <string-array name="allMaterials">
+
+    </string-array>
+
+    <string-array name="materials">
+        <item>Carbon</item>
+        <item>A42</item>
+        <item>Grafil 700–34</item>
+        <item>Kevlar</item>
+        <item>E-Glass</item>
+        <item>S-Glass</item>
+        <item>Basalt</item>
+    </string-array>
+
+    <string-array name="materials2">
+        <item>Epoxy</item>
+        <item>Class A PVE</item>
+        <item>Vinyl Ester</item>
+        <item>Polyester</item>
+        <item>PBS</item>
+        <item>ABS</item>
+        <item>PET</item>
+        <item>Nylon</item>
+        <item>PEEK</item>
+    </string-array>
+
+    <string-array name="materials3">
+        <item>CaCO<sub><small>3</small></sub></item>
+        <item>Glass</item>
+        <item>Steel</item>
+        <item>Aluminum</item>
+        <item>Magnesium</item>
+        <item>Titanium</item>
+    </string-array>
+
+    <string-array name="packingShape">
+        <item>Square</item>
+        <item>Hexagonal</item>
+        <item>Random</item>
+    </string-array>
+</resources>

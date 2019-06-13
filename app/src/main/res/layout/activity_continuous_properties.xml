@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewE1"
+        android:textColor="@color/text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/e1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewProperties" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewE2"
+        android:textColor="@color/text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/e2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewE1"
+        app:layout_constraintTop_toBottomOf="@id/continuousPropertiesTextviewE1" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewV12"
+        android:textColor="@color/text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/v12"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewG12"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewG12" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewG12"
+        android:textColor="@color/text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/g12"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewE2"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewE2" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewV23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+
+        android:layout_marginTop="16dp"
+        android:text="@string/v23"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewV12"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewV12" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewA12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+
+        android:layout_marginTop="16dp"
+        android:text="@string/a1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewV23"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewV23" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewProperties"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/propertiesTitle"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewA23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text"
+
+        android:text="@string/a2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewA12"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewA12" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/p"
+        android:textColor="@color/text"
+
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewA23"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewA23" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewE1disp"
+        android:layout_width="128sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+
+        android:layout_marginStart="8dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/continuousPropertiesTextviewE1"
+        app:layout_constraintTop_toTopOf="@+id/continuousPropertiesTextviewE1" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewE2disp"
+        android:layout_width="128sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textColor="@color/text"
+
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewE1disp"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewE1disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewG12disp"
+        android:layout_width="128sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewE2disp"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewE2disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewV12disp"
+        android:layout_width="128sp"
+        android:textColor="@color/text"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewG12disp"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewG12disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewV23disp"
+        android:layout_width="128sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewV12disp"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewV12disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewA12disp"
+        android:layout_width="128sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewV23disp"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewV23disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewA23disp"
+        android:layout_width="128sp"
+        android:textColor="@color/text"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewA12disp"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewA12disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewPdisp"
+        android:layout_width="128sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewA23disp"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewA23disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewE1unit"
+        android:layout_width="96sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/continuousPropertiesTextviewE1disp"
+        app:layout_constraintTop_toTopOf="@+id/continuousPropertiesTextviewE1disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewE2unit"
+        android:layout_width="96sp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewE1unit"
+        app:layout_constraintTop_toTopOf="@+id/continuousPropertiesTextviewE2disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewG12unit"
+        android:layout_width="96sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewE2unit"
+        app:layout_constraintTop_toTopOf="@+id/continuousPropertiesTextviewG12disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewA12unit"
+        android:layout_width="96sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewG12unit"
+        app:layout_constraintTop_toTopOf="@+id/continuousPropertiesTextviewA12disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewA23unit"
+        android:layout_width="96sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewA12unit"
+        app:layout_constraintTop_toTopOf="@+id/continuousPropertiesTextviewA23disp" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewPunit"
+        android:layout_width="96sp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="@+id/continuousPropertiesTextviewA23unit"
+        app:layout_constraintTop_toTopOf="@+id/continuousPropertiesTextviewPdisp" />
+
+    <Button
+        android:id="@+id/continuousPropertiesButtonVisualization"
+        android:layout_width="128sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/text"
+        android:layout_marginTop="16dp"
+        android:text="@string/visualize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewVisualization" />
+
+    <TextView
+        android:id="@+id/continuousPropertiesTextviewVisualization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/visualization"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewPdisp" />
+
+    <Spinner
+        android:id="@+id/continuousPropertiesSpinnerVisualization"
+        android:layout_width="128sp"
+        android:layout_height="32sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:entries="@array/packingShape"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/continuousPropertiesButtonVisualization"
+        app:layout_constraintTop_toBottomOf="@+id/continuousPropertiesTextviewVisualization" />
+
+
+</android.support.constraint.ConstraintLayout>

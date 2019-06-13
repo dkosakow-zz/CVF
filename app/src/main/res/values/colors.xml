@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#95596E91</color>
+    <color name="colorPrimaryDark">#154B70</color>
+    <color name="colorAccent">#9B0101</color>
+    <color name="pureWhite">#ffffff</color>
+    <color name="buttons">#95596E91</color>
+    <color name="tab">#95596E91</color>
+    <color name="text">#C6000000</color>
+    <color name="gray">#dddddd</color>
+</resources>

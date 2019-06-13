@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/materialSpinner1"
+        android:layout_width="160sp"
+        android:layout_height="48sp"
+        android:spinnerMode="dialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="264dp"
+        android:layout_height="480sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialSpinner1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400sp"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="600sp">
+
+                <Switch
+                    android:id="@+id/materialSwitchEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/allow_edit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialRadiogroup" />
+
+                <TextView
+                    android:id="@+id/materialTextviewE1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/e1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewName" />
+
+                <TextView
+                    android:id="@+id/materialTextviewE2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/e2"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextviewE1"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewE1" />
+
+                <TextView
+                    android:id="@+id/materialTextviewG12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/g12"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextviewE2"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewE2" />
+
+                <TextView
+                    android:id="@+id/materialTextviewV12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/v12"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextviewG12"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewG12" />
+
+                <TextView
+                    android:id="@+id/materialTextviewV23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/v23"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextviewV12"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewV12" />
+
+                <TextView
+                    android:id="@+id/materialTextviewA1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/a1"
+                    app:layout_constraintStart_toStartOf="@id/materialTextviewV23"
+                    app:layout_constraintTop_toBottomOf="@id/materialTextviewV23" />
+
+                <TextView
+                    android:id="@+id/materialTextviewA2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/a2"
+                    app:layout_constraintStart_toStartOf="@id/materialTextviewA1"
+                    app:layout_constraintTop_toBottomOf="@id/materialTextviewA1" />
+
+                <EditText
+                    android:id="@+id/materialTextviewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/materialRadiogroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewA2">
+
+                    <RadioButton
+                        android:id="@+id/materialRadiobuttonFiber"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Fiber" />
+
+                    <RadioButton
+                        android:id="@+id/materialRadiobuttonMatrix"
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Matrix" />
+
+                    <RadioButton
+                        android:id="@+id/materialRadiobuttonFiller"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Filler" />
+                </RadioGroup>
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/materialButtonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/add_material"
+        app:layout_constraintStart_toEndOf="@+id/materialSpinner1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

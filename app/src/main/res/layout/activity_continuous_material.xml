@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/continuousMaterialToggleFibercontent"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/text"
+                android:textOff="@string/volume"
+                android:textOn="@string/weight"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/continuousMaterialTexteditFraction"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTextviewMaterial" />
+
+            <TextView
+                android:id="@+id/continuousMaterialTextviewFibercontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:selectAllOnFocus="true"
+                android:text="@string/fiber_content_by"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTextviewMaterial" />
+
+            <TextView
+                android:id="@+id/continuousMaterialTextviewMaterialHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/matrix_material"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/continuousMaterialTextviewMaterial2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTextviewMaterial2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/continuousMaterialTextviewMaterial2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/fiber_material"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTextviewMaterials" />
+
+            <TextView
+                android:id="@+id/continuousMaterialTextviewDensity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/density"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTextviewFraction" />
+
+            <TextView
+                android:id="@+id/continuousMaterialTextviewFraction"
+                android:layout_width="204dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/fiber_volume_fraction"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTextviewFibercontent" />
+
+            <Spinner
+                android:id="@+id/continuousMaterialSpinnerMaterial"
+                style="@style/Platform.Widget.AppCompat.Spinner"
+                android:layout_width="126dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray"
+                android:entries="@array/materials"
+                android:spinnerMode="dialog"
+                android:textAlignment="viewStart"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/continuousMaterialTexteditDensity"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTextviewMaterials"
+                tools:visibility="visible" />
+
+            <Spinner
+                android:id="@+id/continuousMaterialSpinnerMaterial2"
+                style="@style/Platform.Widget.AppCompat.Spinner"
+                android:layout_width="126dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray"
+                android:entries="@array/materials2"
+                android:spinnerMode="dialog"
+                android:textAlignment="viewStart"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/continuousMaterialSpinnerMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialSpinnerMaterial"
+                tools:visibility="visible" />
+
+            <EditText
+                android:id="@+id/continuousMaterialTexteditDensity"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:labelFor="@id/continuousMaterialTextviewDensity"
+                android:textColor="@color/text"
+                app:layout_constraintStart_toStartOf="@+id/continuousMaterialTexteditFraction"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTexteditFraction"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/continuousMaterialTexteditFraction"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:autofillHints=""
+                android:duplicateParentState="false"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textColor="@color/text"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/continuousMaterialTextviewFraction"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialToggleFibercontent"
+                tools:targetApi="o"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/continuousMaterialTextviewMaterials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/materials"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continuousMaterialTexteditDensity" />
+
+            <TextView
+                android:id="@+id/continuousMaterialTextviewMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/microstructure"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>
