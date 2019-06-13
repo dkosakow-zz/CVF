@@ -95,4 +95,4 @@ public class Laminate extends AppCompatActivity {
             return inflater.inflate(R.layout.activity_laminate_properties, container, false);
         }   //onCreateView
     }   //Fragment Laminate Material
-}   //Laminate
+}   //class Laminate

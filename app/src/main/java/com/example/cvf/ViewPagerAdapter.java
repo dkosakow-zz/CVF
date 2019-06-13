@@ -7,6 +7,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The ViewPagerAdapter class that sets up fragments within TabLayouts
+ *
+ * @author David Kosakowski, dkosakow@purdue.edu
+ * @version 06/13/2019
+ */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragmentList = new ArrayList<>();
     private List<String> fragmentListTitles = new ArrayList<>();
@@ -33,5 +39,5 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public void AddFragment(Fragment fragment, String title) {
         fragmentList.add(fragment);
         fragmentListTitles.add(title);
-    }
-}
+    }   //AddFragment
+}   //class ViewPagerAdapter
