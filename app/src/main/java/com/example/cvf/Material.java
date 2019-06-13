@@ -1,7 +1,9 @@
 package com.example.cvf;
 
 import java.util.ArrayList;
-/*
+import java.util.jar.Attributes;
+
+/**
  *  The Material class from which all material objects get their characteristics
  *
  * @author: David Kosakowski, dkosakow@purdue.edu
@@ -18,11 +20,12 @@ public class Material {
     private double shearModulus12 = 0.0;    //Shear Modulus 12 (MPa)
     private double shearModulus13 = 0.0;    //Shear Modulus 13 (MPa)
     private double shearModulus23 = 0.0;    //Shear Modulus 23 (MPa)
-    private double thermalExpansion1 = 0.0;  //Coefficient of Thermal Expansion 1 (1/K)
+    private double thermalExpansion1 = 0.0; //Coefficient of Thermal Expansion 1 (1/K)
     private double thermalExpansion2 = 0.0; //Coefficient of Thermal Expansion 2 (1/K)
     private double density = 0.0;           //Density (g/cc)
     private boolean allowEdit = false;      //allow user to edit, kind of like administrator privileges
     private Type type;                      //Isotropic, Transverse, Orthotropic, or Anisotropic
+    private double[] elasticProperties;
 
     private double[][] complianceTensor = new double[6][6];
     private double[][] stiffnessTensor = new double[6][6];
@@ -45,13 +48,27 @@ public class Material {
         this.name = "New Material";
     }   //empty constructor
 
-    public class ComplianceTensor {
+    public Material(double[] elasticProperties, Type type, String name) {
+        this.setName(name);
+        switch (type) {
+            case ISOTROPIC:
 
-    }
+                break;
+            case TRANSVERSE:
+
+                break;
+            case ORTHOTROPIC:
+
+                break;
+            case ANISOTROPIC:
+
+                break;
+        }   //switch (type)
+    }   //full material constructor
 
     //<editor-fold desc="Getters and Setters">
     public String getName() {
-        return name;
+        return this.name;
     }   //getName()
 
     public void setName(String name) {
@@ -59,7 +76,7 @@ public class Material {
     }   //setName()
 
     public double getYoungsModulus1() {
-        return youngsModulus1;
+        return this.youngsModulus1;
     }   //getYoungsModulus1()
 
     public void setYoungsModulus1(double youngsModulus1) {
@@ -171,13 +188,48 @@ public class Material {
     }   //setType()
     //</editor-fold>
 
-    //Default Materials
-    Material Carbon = new Material();
-    Material Kevlar = new Material();
-    Material A42 = new Material();
-    Material Grafil70034 = new Material();
-    Material EGlass = new Material();
-    Material SGlass = new Material();
-    Material Basalt = new Material();
-}   //class Material
+    //<editor-fold desc="Default Materials & Properties">
+                                //E1    v12     a1      density
+    private static double[] epoxy = {3500, 0.33, 0.55e-6, 1.54};
+    private static double[] classAPVE = {2750, 0.33, 80e-6, 1.17};
+    private static double[] vinylEster = {3600, 0.33, 80e-6, 1.166};
+    private static double[] polyester = {2500, 0.33, 124e-6, 1.37};
+    private static double[] pps = {5000, 0.33, 60e-6, 1.44};
+    private static double[] abs = {2500, 0.33, 80e-6, 1.07};
+    private static double[] pet = {2900, 0.33, 70e-6, 1.38};
+    private static double[] nylon = {2500, 0.33, 110e-6, 1.15};
+    private static double[] peek = {4000, 0.37, 55e-6, 1.32};
+    private static double[] eGlass = {72e3, 0.2, 5e-6, 2.55};
+    private static double[] sGlass = {86e3, 0.22, 5.5e-6, 2.55};
+    private static double[] basalt = {86e3, 0.25, 2.5e-6, 2.67};
 
+    public static Material Epoxy = new Material(epoxy, Type.ISOTROPIC, "Epoxy");
+    public static Material ClassAPVE = new Material(classAPVE, Type.ISOTROPIC, "Class A PVE");
+    public static Material VinylEster = new Material(vinylEster, Type.ISOTROPIC, "Vinyl Ester");
+    public static Material Polyester = new Material(polyester, Type.ISOTROPIC, "Polyester");
+    public static Material PPS = new Material(pps, Type.ISOTROPIC, "PPS");
+    public static Material ABS = new Material(abs, Type.ISOTROPIC, "ABS");
+    public static Material PET = new Material(pet, Type.ISOTROPIC, "PET");
+    public static Material Nylon = new Material(nylon, Type.ISOTROPIC, "Nylon");
+    public static Material Peek = new Material(peek, Type.ISOTROPIC, "Peek");
+    public static Material EGlass = new Material(eGlass, Type.ISOTROPIC, "E-Glass");
+    public static Material SGlass = new Material(sGlass, Type.ISOTROPIC, "S-Glass");
+    public static Material Basalt = new Material(basalt, Type.ISOTROPIC, "Basalt");
+
+                                //E1    E2      G12     v12     v23     a1      a2      density
+    private static double[] carbon = {257e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
+    private static double[] a42 = {240e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.78};
+    private static double[] grafil70034 = {234e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
+    private static double[] kevlar = {154e3, 4200, 2900, 0.35, 0.3, -4e-6, -4e-6, 1.47};
+
+    public static Material Carbon = new Material(carbon, Type.TRANSVERSE, "Carbon");
+    public static Material A42 = new Material(a42, Type.TRANSVERSE, "A42");
+    public static Material Grafil70034 = new Material(grafil70034, Type.TRANSVERSE, "Grafil 700-34");
+    public static Material Kevlar = new Material(kevlar, Type.TRANSVERSE, "Kevlar");
+    //</editor-fold>
+    public boolean addMaterial(String name) {
+        boolean wasSuccessful = false;
+        //TODO
+        return wasSuccessful;
+    }   //addMaterial()
+}   //class Material
