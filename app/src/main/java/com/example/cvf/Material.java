@@ -186,45 +186,10 @@ public class Material {
     }   //setType()
     //</editor-fold>
 
-    //<editor-fold desc="Default Materials & Properties">
-                                //E1    v12     a1      density
-    private static double[] epoxy = {3500, 0.33, 0.55e-6, 1.54};
-    private static double[] classAPVE = {2750, 0.33, 80e-6, 1.17};
-    private static double[] vinylEster = {3600, 0.33, 80e-6, 1.166};
-    private static double[] polyester = {2500, 0.33, 124e-6, 1.37};
-    private static double[] pps = {5000, 0.33, 60e-6, 1.44};
-    private static double[] abs = {2500, 0.33, 80e-6, 1.07};
-    private static double[] pet = {2900, 0.33, 70e-6, 1.38};
-    private static double[] nylon = {2500, 0.33, 110e-6, 1.15};
-    private static double[] peek = {4000, 0.37, 55e-6, 1.32};
-    private static double[] eGlass = {72e3, 0.2, 5e-6, 2.55};
-    private static double[] sGlass = {86e3, 0.22, 5.5e-6, 2.55};
-    private static double[] basalt = {86e3, 0.25, 2.5e-6, 2.67};
-
-    public static Material Epoxy = new Material(epoxy, Type.ISOTROPIC, "Epoxy");
-    public static Material ClassAPVE = new Material(classAPVE, Type.ISOTROPIC, "Class A PVE");
-    public static Material VinylEster = new Material(vinylEster, Type.ISOTROPIC, "Vinyl Ester");
-    public static Material Polyester = new Material(polyester, Type.ISOTROPIC, "Polyester");
-    public static Material PPS = new Material(pps, Type.ISOTROPIC, "PPS");
-    public static Material ABS = new Material(abs, Type.ISOTROPIC, "ABS");
-    public static Material PET = new Material(pet, Type.ISOTROPIC, "PET");
-    public static Material Nylon = new Material(nylon, Type.ISOTROPIC, "Nylon");
-    public static Material Peek = new Material(peek, Type.ISOTROPIC, "Peek");
-    public static Material EGlass = new Material(eGlass, Type.ISOTROPIC, "E-Glass");
-    public static Material SGlass = new Material(sGlass, Type.ISOTROPIC, "S-Glass");
-    public static Material Basalt = new Material(basalt, Type.ISOTROPIC, "Basalt");
-
-                                //E1    E2      G12     v12     v23     a1      a2      density
-    private static double[] carbon = {257e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
-    private static double[] a42 = {240e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.78};
-    private static double[] grafil70034 = {234e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
-    private static double[] kevlar = {154e3, 4200, 2900, 0.35, 0.3, -4e-6, -4e-6, 1.47};
-
-    public static Material Carbon = new Material(carbon, Type.TRANSVERSE, "Carbon");
-    public static Material A42 = new Material(a42, Type.TRANSVERSE, "A42");
-    public static Material Grafil70034 = new Material(grafil70034, Type.TRANSVERSE, "Grafil 700-34");
-    public static Material Kevlar = new Material(kevlar, Type.TRANSVERSE, "Kevlar");
-    //</editor-fold>
+//    public double[] computeTensor() {
+//
+//        return new double[];
+//    }   //computeTensor
 
     public boolean addMaterial(String name) {
         boolean wasSuccessful = false;
