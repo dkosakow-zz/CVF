@@ -22,28 +22,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.mainToolbar);   //Instantiate toolbar
-        toolbar.setTitle("CVF Material");                             //Title
-        setSupportActionBar(toolbar);                                 //Make the custom toolbar the app's actionbar
-
-        //Home Screen (Main Menu)
-        Button button1 = findViewById(R.id.mainButtonContinuous);     //Button Selection "Continuous"
+        Toolbar toolbar = (Toolbar) findViewById(R.id.mainToolbar);     //Instantiate toolbar
+        toolbar.setTitle("CVF Material");                               //Title
+        setSupportActionBar(toolbar);                                   //Make the custom toolbar the app's actionbar
+        //Home Screen Buttons (Main Menu)
+        Button button1 = findViewById(R.id.mainButtonContinuous);       //Button Selection "Continuous"
         button1.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                startActivity(new Intent(MainActivity.this, Continuous.class));
            }    //onClick(View)
         });
-
-        Button button2 = findViewById(R.id.mainButtonSfrp);     //Button Selection "SFRP"
+        Button button2 = findViewById(R.id.mainButtonSfrp);             //Button Selection "SFRP"
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SFRP.class));
             }    //onClick(View)
         });
-
-        Button button3 = findViewById(R.id.mainButtonLaminate);     //Button Selection "Laminate"
+        Button button3 = findViewById(R.id.mainButtonLaminate);         //Button Selection "Laminate"
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

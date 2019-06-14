@@ -6,8 +6,8 @@ import java.util.jar.Attributes;
 /**
  *  The Material class from which all material objects get their characteristics
  *
- * @author: David Kosakowski, dkosakow@purdue.edu
- * @version: 06/13/2019
+ * @author David Kosakowski, dkosakow@purdue.edu
+ * @version 06/13/2019
  */
 public class Material {
     private String name = "";
@@ -36,7 +36,7 @@ public class Material {
         ORTHOTROPIC("orthotropic"),
         ANISOTROPIC("anisotropic");
         public final String label;
-        private Type(String label) {
+        Type(String label) {
             this.label = label;
         }   //label
     }   //Type
@@ -186,14 +186,9 @@ public class Material {
     }   //setType()
     //</editor-fold>
 
-//    public double[] computeTensor() {
-//
-//        return new double[];
-//    }   //computeTensor
+    public double[] computeTensor(double[] elasticProperties) {
 
-    public boolean addMaterial(String name) {
-        boolean wasSuccessful = false;
-        //TODO
-        return wasSuccessful;
-    }   //addMaterial()
+
+        return new double[0];
+    }   //computeTensor
 }   //class Material

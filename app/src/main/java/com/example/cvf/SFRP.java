@@ -34,7 +34,7 @@ public class SFRP extends AppCompatActivity {
         //Toolbar
         Toolbar toolbar = findViewById(R.id.sfrpToolbar);   //Instantiate toolbar
         toolbar.setTitle("SFRP");                           //Title
-        toolbar.setSubtitle("Discontinuous Fiber");        //Subtitle
+        toolbar.setSubtitle("Discontinuous Fiber");         //Subtitle
         setSupportActionBar(toolbar);                       //Make the custom toolbar the app's actionbar
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
@@ -57,7 +57,6 @@ public class SFRP extends AppCompatActivity {
         return true;
     }   //onCreateOptionsMenu(Menu)
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -73,7 +72,6 @@ public class SFRP extends AppCompatActivity {
         }   //switch (item.getItemId())
         return super.onOptionsItemSelected(item);
     }   //onOptionsItemSelected(MenuItem)
-
 
     public static class FragmentSFRPMaterial extends Fragment {
         public FragmentSFRPMaterial() {}
@@ -121,13 +119,9 @@ public class SFRP extends AppCompatActivity {
             final EditText fiberFraction = (EditText) v.findViewById(R.id.sfrpMaterialTexteditFiberfraction);
             final EditText fillerFraction = (EditText) v.findViewById(R.id.sfrpMaterialTexteditFillerfraction);
 
-
-
             return v;
         }   //onCreateView()
     }   //Fragment SFRP Material
-
-
 
     public static class FragmentSFRPProperties extends Fragment {
         public FragmentSFRPProperties() {}

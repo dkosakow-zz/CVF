@@ -9,7 +9,8 @@ import java.util.Arrays;
  * @version 06/14/2019
  */
 class MaterialLibrary {
-    //E1    v12     a1      density
+    //<editor-fold desc="Default Materials & Properties">
+                                    //E1    v12     a1      density
     private static double[] epoxy = {3500, 0.33, 0.55e-6, 1.54};
     private static double[] classAPVE = {2750, 0.33, 80e-6, 1.17};
     private static double[] vinylEster = {3600, 0.33, 80e-6, 1.166};
@@ -22,13 +23,12 @@ class MaterialLibrary {
     private static double[] eGlass = {72e3, 0.2, 5e-6, 2.55};
     private static double[] sGlass = {86e3, 0.22, 5.5e-6, 2.55};
     private static double[] basalt = {86e3, 0.25, 2.5e-6, 2.67};
-    //E1    E2      G12     v12     v23     a1      a2      density
+                                //E1    E2      G12     v12     v23     a1      a2      density
     private static double[] carbon = {257e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
     private static double[] a42 = {240e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.78};
     private static double[] grafil70034 = {234e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
     private static double[] kevlar = {154e3, 4200, 2900, 0.35, 0.3, -4e-6, -4e-6, 1.47};
 
-    //<editor-fold desc="Default Materials & Properties">
     private static Material Epoxy = new Material(epoxy, Material.Type.ISOTROPIC, "Epoxy");
     private static Material ClassAPVE = new Material(classAPVE, Material.Type.ISOTROPIC, "Class A PVE");
     private static Material VinylEster = new Material(vinylEster, Material.Type.ISOTROPIC, "Vinyl Ester");
@@ -53,4 +53,6 @@ class MaterialLibrary {
         add(ABS); add(PET); add(Nylon); add(Peek); add(EGlass); add(SGlass);
         add(Basalt); add(Carbon); add(A42); add(Grafil70034); add(Kevlar);
     }};
+
+
 }   //MaterialLibrary.java
