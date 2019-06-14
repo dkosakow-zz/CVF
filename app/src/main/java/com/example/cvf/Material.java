@@ -26,7 +26,6 @@ public class Material {
     private boolean allowEdit = false;      //allow user to edit, kind of like administrator privileges
     private Type type;                      //Isotropic, Transverse, Orthotropic, or Anisotropic
     private double[] elasticProperties;
-
     private double[][] complianceTensor = new double[6][6];
     private double[][] stiffnessTensor = new double[6][6];
 
@@ -36,8 +35,6 @@ public class Material {
         TRANSVERSE("transverse"),
         ORTHOTROPIC("orthotropic"),
         ANISOTROPIC("anisotropic");
-        //
-
         public final String label;
         private Type(String label) {
             this.label = label;
@@ -48,9 +45,10 @@ public class Material {
         this.name = "New Material";
     }   //empty constructor
 
-    public Material(double[] elasticProperties, Type type, String name) {
+    public Material(double[] properties, Type type, String name) {
         this.setName(name);
-        switch (type) {
+        this.elasticProperties = properties.clone();
+        switch(type) {
             case ISOTROPIC:
 
                 break;
@@ -227,6 +225,7 @@ public class Material {
     public static Material Grafil70034 = new Material(grafil70034, Type.TRANSVERSE, "Grafil 700-34");
     public static Material Kevlar = new Material(kevlar, Type.TRANSVERSE, "Kevlar");
     //</editor-fold>
+
     public boolean addMaterial(String name) {
         boolean wasSuccessful = false;
         //TODO
