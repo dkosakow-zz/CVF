@@ -3,7 +3,7 @@ package com.example.cvf;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.jar.Attributes;
-import org.apache.commons.*;
+import org.apache.commons.math3.linear.RealMatrix;
 
 /**
  *  The Material class from which all material objects get their characteristics
@@ -12,7 +12,6 @@ import org.apache.commons.*;
  * @version 06/13/2019
  */
 public class Material {
-
     private String name = "";
     private double youngsModulus1 = 0.0;    //Young's Modulus 1 (MPa)
     private double youngsModulus2 = 0.0;    //Young's Modulus 2 (MPa)
@@ -31,6 +30,8 @@ public class Material {
     private double[][] elasticProperties;
     private double[][] complianceTensor = new double[6][6];
     private double[][] stiffnessTensor = new double[6][6];
+
+
 
     public enum Type {
         //Constants
