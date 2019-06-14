@@ -11,23 +11,23 @@ import java.util.Arrays;
 class MaterialLibrary {
     //<editor-fold desc="Default Materials & Properties">
                                     //E1    v12     a1      density
-    private static double[] epoxy = {3500, 0.33, 0.55e-6, 1.54};
-    private static double[] classAPVE = {2750, 0.33, 80e-6, 1.17};
-    private static double[] vinylEster = {3600, 0.33, 80e-6, 1.166};
-    private static double[] polyester = {2500, 0.33, 124e-6, 1.37};
-    private static double[] pps = {5000, 0.33, 60e-6, 1.44};
-    private static double[] abs = {2500, 0.33, 80e-6, 1.07};
-    private static double[] pet = {2900, 0.33, 70e-6, 1.38};
-    private static double[] nylon = {2500, 0.33, 110e-6, 1.15};
-    private static double[] peek = {4000, 0.37, 55e-6, 1.32};
-    private static double[] eGlass = {72e3, 0.2, 5e-6, 2.55};
-    private static double[] sGlass = {86e3, 0.22, 5.5e-6, 2.55};
-    private static double[] basalt = {86e3, 0.25, 2.5e-6, 2.67};
-                                //E1    E2      G12     v12     v23     a1      a2      density
-    private static double[] carbon = {257e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
-    private static double[] a42 = {240e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.78};
-    private static double[] grafil70034 = {234e3, 12450, 25e3, 0.291, 0.206, 2e-6, 5e-6, 1.8};
-    private static double[] kevlar = {154e3, 4200, 2900, 0.35, 0.3, -4e-6, -4e-6, 1.47};
+    private static double[][] epoxy = {{3500, 0.33, 0.55e-6, 1.54}};
+    private static double[][] classAPVE = {{2750, 0.33, 80e-6, 1.17}};
+    private static double[][] vinylEster = {{3600, 0.33, 80e-6, 1.166}};
+    private static double[][] polyester = {{2500, 0.33, 124e-6, 1.37}};
+    private static double[][] pps = {{5000, 0.33, 60e-6, 1.44}};
+    private static double[][] abs = {{2500, 0.33, 80e-6, 1.07}};
+    private static double[][] pet = {{2900, 0.33, 70e-6, 1.38}};
+    private static double[][] nylon = {{2500, 0.33, 110e-6, 1.15}};
+    private static double[][] peek = {{4000, 0.37, 55e-6, 1.32}};
+    private static double[][] eGlass = {{72e3, 0.2, 5e-6, 2.55}};
+    private static double[][] sGlass = {{86e3, 0.22, 5.5e-6, 2.55}};
+    private static double[][] basalt = {{86e3, 0.25, 2.5e-6, 2.67}};
+                                //E1    E2      v12     v23     G12     a1      a2      density
+    private static double[][] carbon = {{257e3, 12450, 0.291, 0.206, 25e3, 2e-6, 5e-6, 1.8}};
+    private static double[][] a42 = {{240e3, 12450, 0.291, 0.206, 25e3, 2e-6, 5e-6, 1.78}};
+    private static double[][] grafil70034 = {{234e3, 12450, 0.291, 0.206, 25e3, 2e-6, 5e-6, 1.8}};
+    private static double[][] kevlar = {{154e3, 4200, 0.35, 0.3, 2900, -4e-6, -4e-6, 1.47}};    //www.mse.mtu.edu/~drjohn/my4150/props.html
 
     private static Material Epoxy = new Material(epoxy, Material.Type.ISOTROPIC, "Epoxy");
     private static Material ClassAPVE = new Material(classAPVE, Material.Type.ISOTROPIC, "Class A PVE");

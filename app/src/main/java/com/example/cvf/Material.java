@@ -1,7 +1,9 @@
 package com.example.cvf;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.jar.Attributes;
+import org.apache.commons.*;
 
 /**
  *  The Material class from which all material objects get their characteristics
@@ -10,6 +12,7 @@ import java.util.jar.Attributes;
  * @version 06/13/2019
  */
 public class Material {
+
     private String name = "";
     private double youngsModulus1 = 0.0;    //Young's Modulus 1 (MPa)
     private double youngsModulus2 = 0.0;    //Young's Modulus 2 (MPa)
@@ -25,7 +28,7 @@ public class Material {
     private double density = 0.0;           //Density (g/cc)
     private boolean allowEdit = false;      //allow user to edit, kind of like administrator privileges
     private Type type;                      //Isotropic, Transverse, Orthotropic, or Anisotropic
-    private double[] elasticProperties;
+    private double[][] elasticProperties;
     private double[][] complianceTensor = new double[6][6];
     private double[][] stiffnessTensor = new double[6][6];
 
@@ -45,24 +48,94 @@ public class Material {
         this.name = "New Material";
     }   //empty constructor
 
-    public Material(double[] properties, Type type, String name) {
+    public Material(double[][] properties, Type type, String name) {
         this.setName(name);
         this.elasticProperties = properties.clone();
-        switch(type) {
-            case ISOTROPIC:
-
-                break;
-            case TRANSVERSE:
-
-                break;
-            case ORTHOTROPIC:
-
-                break;
-            case ANISOTROPIC:
-
-                break;
-        }   //switch (type)
+        if (type == Type.ORTHOTROPIC) {
+            this.complianceTensor = computeTensor(properties).clone();
+            this.stiffnessTensor = arrayInverse(complianceTensor);
+        } else {
+            this.stiffnessTensor = computeTensor(properties).clone();
+            this.complianceTensor = arrayInverse(stiffnessTensor);
+        }   //if orthotropic
     }   //full material constructor
+
+    public double[][] computeTensor(double[][] properties) {
+        double[][] tensor = new double[6][6];
+        if (properties.length == 6 && properties[0].length == 6) {
+            tensor = properties;
+        }   //if already a tensor?
+        try {
+            switch (type) {
+                case ISOTROPIC:
+                    double young = properties[0][0];
+                    double poisson = properties[0][1];
+                    double factor = young / ((1 + poisson) * (1 - 2 * poisson));
+                    tensor[0][0] = factor * (1 - poisson);
+                    tensor[1][1] = tensor[0][0];
+                    tensor[2][2] = tensor[0][0];
+                    tensor[0][1] = factor * poisson;
+                    tensor[1][0] = tensor[0][1];
+                    tensor[0][2] = tensor[0][1];
+                    tensor[2][0] = tensor[0][1];
+                    tensor[1][2] = tensor[0][1];
+                    tensor[2][1] = tensor[0][1];
+                    tensor[3][3] = factor * (1 - 2 * poisson) / 2;
+                    tensor[4][4] = tensor[3][3];
+                    tensor[5][5] = tensor[3][3];
+                    break;
+                case TRANSVERSE:
+                    double young1 = properties[0][0]; double young2 = properties[0][1];
+                    double poisson12 = properties[0][2]; double poisson23 = properties[0][3]; double poisson21 = young2 * poisson12 / young1;
+                    double shear12 = properties[0][4];
+                    double delta = (1 + poisson23) * (1 - poisson23 - 2 * poisson21 * poisson12) / young2 / young2 / young1;
+                    tensor[1][1] = (1 - poisson21 * poisson12) / young2 / young1 / delta;
+                    tensor[1][2] = (poisson23 + poisson21 * poisson12) / young2 / young1 / delta;
+                    tensor[2][1] = tensor[1][2];
+                    tensor[1][0] = (poisson12 + poisson23 * poisson12) / young2 / young1 / delta;
+                    tensor[0][1] = (poisson21 + poisson23 * poisson21) / young2 / young2 / delta;
+                    tensor[2][2] = tensor[1][1];
+                    tensor[2][0] = (poisson12 + poisson23 * poisson12) / young1 / young2 / delta;
+                    tensor[0][2] = (poisson21 * (1 + poisson23)) / young2 / young2 / delta;
+                    tensor[0][0] = (1 - poisson23 * poisson23) / young2 / young2 / delta;
+                    tensor[3][3] = shear12;
+                    tensor[4][4] = shear12;
+                    tensor[5][5] = young2 / (1 + poisson23) / 2;
+                    break;
+                case ORTHOTROPIC:
+                    young1 = properties[0][0]; young2 = properties[0][1]; double young3 = properties[0][2];
+                    poisson12 = properties[0][3]; double poisson13 = properties[0][4]; poisson23 = properties[0][5];
+                    shear12 = properties[0][6]; double shear13 = properties[0][7]; double shear23 = properties[0][8];
+                    tensor[0][0] = 1 / young1;
+                    tensor[1][1] = 1 / young2;
+                    tensor[2][2] = 1 / young3;
+                    tensor[0][1] = -poisson12 / young1;
+                    tensor[1][0] = tensor[0][1];
+                    tensor[0][2] = -poisson13 / young1;
+                    tensor[2][0] = tensor[0][2];
+                    tensor[1][2] = -poisson23 / young2;
+                    tensor[2][1] = tensor[1][2];
+                    tensor[3][3] = 1 / shear12;
+                    tensor[4][4] = 1 / shear13;
+                    tensor[5][5] = 1 / shear23;
+                    break;
+                case ANISOTROPIC:
+                    int index = 0;
+                    for (int i = 0; i < properties.length; i++) {
+                        for (int j = 0; j < properties[0].length; j++) {
+                            tensor[i][j] = properties[0][index];
+                            tensor[j][i] = tensor[i][j];
+                            index += 1;
+                        }   //for each column of each row
+                    }   //for each row
+                    break;
+            }   //switch (type)
+            return tensor;
+        } catch(Exception e) {
+            System.out.println("ERROR: computeTensor() error");
+        }   //try catch
+        return new double[6][6];
+    }   //computeTensor()
 
     //<editor-fold desc="Getters and Setters">
     public String getName() {
@@ -185,10 +258,4 @@ public class Material {
         this.type = type;
     }   //setType()
     //</editor-fold>
-
-    public double[] computeTensor(double[] elasticProperties) {
-
-
-        return new double[0];
-    }   //computeTensor
 }   //class Material
