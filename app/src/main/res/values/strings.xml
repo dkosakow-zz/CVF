@@ -57,6 +57,7 @@
     <string name="filler_weight_fraction">Filler Weight Fraction:</string>
     <string name="add_material">Add Material</string>
     <string name="allow_edit">Allow Edit</string>
+    <string name="mpa">MPa</string>
 
 
     <string-array name="orientations">

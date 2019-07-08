@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/materialConstraintlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,19 +14,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/materialButtonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/add_material"
+        app:layout_constraintStart_toEndOf="@+id/materialSpinner1"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
-        android:layout_width="264dp"
+        android:id="@+id/materialScrollview"
+        android:layout_width="300sp"
         android:layout_height="480sp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialSpinner1">
 
         <LinearLayout
+            android:id="@+id/materialLinearlayout"
             android:layout_width="match_parent"
             android:layout_height="400sp"
             android:orientation="vertical">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/materialConstraintlayout2"
                 android:layout_width="match_parent"
                 android:layout_height="600sp">
 
@@ -114,7 +127,8 @@
                     android:inputType="textPersonName"
                     android:text="Name"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:importantForAutofill="no" />
 
                 <RadioGroup
                     android:id="@+id/materialRadiogroup"
@@ -153,14 +167,5 @@
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/materialButtonAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="@string/add_material"
-        app:layout_constraintStart_toEndOf="@+id/materialSpinner1"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

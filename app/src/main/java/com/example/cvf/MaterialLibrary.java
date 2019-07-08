@@ -42,17 +42,15 @@ class MaterialLibrary {
     private static Material SGlass = new Material(sGlass, Material.Type.ISOTROPIC, "S-Glass");
     private static Material Basalt = new Material(basalt, Material.Type.ISOTROPIC, "Basalt");
 
-    private static Material Carbon = new Material(carbon, Material.Type.TRANSVERSE, "Carbon");
+    private static Material Carbon = new Material(carbon, Material.Type.TRANSVERSE, "Carbon");  //IM7 from Mike's papers
     private static Material A42 = new Material(a42, Material.Type.TRANSVERSE, "A42");
     private static Material Grafil70034 = new Material(grafil70034, Material.Type.TRANSVERSE, "Grafil 700-34");
     private static Material Kevlar = new Material(kevlar, Material.Type.TRANSVERSE, "Kevlar");
     //</editor-fold>
 
-    public static ArrayList<Material> materialList = new ArrayList<Material>() {{
+    public static ArrayList<Material> materials = new ArrayList<Material>() {{
         add(Epoxy); add(ClassAPVE); add(VinylEster); add(Polyester); add(PPS);
         add(ABS); add(PET); add(Nylon); add(Peek); add(EGlass); add(SGlass);
         add(Basalt); add(Carbon); add(A42); add(Grafil70034); add(Kevlar);
     }};
-
-
 }   //MaterialLibrary.java
