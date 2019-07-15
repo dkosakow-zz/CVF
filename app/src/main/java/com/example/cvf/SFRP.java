@@ -61,7 +61,6 @@ public class SFRP extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.otherClear:
-
                 break;
             case R.id.otherSettings:
                 //TODO

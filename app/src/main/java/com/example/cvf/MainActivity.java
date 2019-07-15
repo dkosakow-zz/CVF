@@ -9,10 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
-
-import static com.example.cvf.MaterialLibrary.*;
-
 public class MainActivity extends AppCompatActivity {
 
 

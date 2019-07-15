@@ -10,6 +10,8 @@
         android:id="@+id/materialSpinner1"
         android:layout_width="160sp"
         android:layout_height="48sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:spinnerMode="dialog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,14 +20,15 @@
         android:id="@+id/materialButtonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/add_material"
         app:layout_constraintStart_toEndOf="@+id/materialSpinner1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/materialScrollview"
-        android:layout_width="300sp"
+        android:layout_width="match_parent"
         android:layout_height="480sp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,14 +61,14 @@
                     android:id="@+id/materialTextviewE1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="32dp"
                     android:layout_marginTop="24dp"
-                    android:text="@string/e1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewName"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
-                    android:selectAllOnFocus="true" />
+                    android:selectAllOnFocus="true"
+                    android:text="@string/e1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTexteditName" />
 
                 <TextView
                     android:id="@+id/materialTextviewE2"
@@ -122,16 +125,17 @@
                     app:layout_constraintTop_toBottomOf="@id/materialTextviewA1" />
 
                 <EditText
-                    android:id="@+id/materialTextviewName"
+                    android:id="@+id/materialTexteditName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
                     android:ems="10"
+                    android:importantForAutofill="no"
                     android:inputType="textPersonName"
                     android:text="Name"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:importantForAutofill="no" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <RadioGroup
                     android:id="@+id/materialRadiogroup"
