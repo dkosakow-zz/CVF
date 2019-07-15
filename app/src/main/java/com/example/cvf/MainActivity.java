@@ -47,21 +47,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Laminate.class));
             }    //onClick(View)
         });
-
     }   //onCreate(Bundle)
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_other, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }   //onCreateOptionsMenu(Menu)
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.otherClear:
-                //TODO
-                break;
             case R.id.otherSettings:
                 //TODO
                 break;

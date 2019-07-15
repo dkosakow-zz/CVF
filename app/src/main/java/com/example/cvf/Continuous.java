@@ -15,10 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Continuous extends AppCompatActivity {
@@ -47,11 +50,8 @@ public class Continuous extends AppCompatActivity {
         adapter.AddFragment(new FragmentContinuousProperties(), "Homogeneous Properties");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-        //Layout Assignments and Operations
-        TextView fiberContent = (TextView) findViewById(R.id.continuousMaterialTextviewFibercontent);
-
-
+        //
+        //TODO
     }   //onCreate(Bundle)
 
     @Override
@@ -78,6 +78,34 @@ public class Continuous extends AppCompatActivity {
 
     public static class FragmentContinuousMaterial extends Fragment {
         public FragmentContinuousMaterial() {}
+
+        @Override
+        public void onActivityCreated(Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+
+            Spinner materialSpinner1 = (Spinner) getView().findViewById(R.id.continuousMaterialSpinnerMaterial);
+            ArrayList<String> materialList1 = new ArrayList<>();
+            for (Material object : MaterialLibrary.materials) {
+                if (object.getFiberType() == Material.FiberType.FIBER) {
+                    materialList1.add(object.getName());
+                }
+            }   //add Fibers to spinner
+            ArrayAdapter<String> adapterSpinner1 = new ArrayAdapter<>(getActivity().getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, materialList1);
+            adapterSpinner1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            materialSpinner1.setAdapter(adapterSpinner1);
+
+            Spinner materialSpinner2 = (Spinner) getView().findViewById(R.id.continuousMaterialSpinnerMaterial2);
+            ArrayList<String> materialList2 = new ArrayList<>();
+            for (Material object : MaterialLibrary.materials) {
+                if (object.getFiberType() == Material.FiberType.MATRIX) {
+                    materialList2.add(object.getName());
+                }
+            }   //add Matrix materials to spinner
+            ArrayAdapter<String> adapterSpinner2 = new ArrayAdapter<>(getActivity().getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, materialList2);
+            adapterSpinner2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            materialSpinner2.setAdapter(adapterSpinner2);
+        }   //onActivityCreated
+
         @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -95,6 +123,8 @@ public class Continuous extends AppCompatActivity {
                 }   //onClick(View)
             }); //setOnClickListener
 
+            //Text
+            TextView fiberContent = (TextView) v.findViewById(R.id.continuousMaterialTextviewFibercontent);
             final EditText density = (EditText) v.findViewById(R.id.continuousMaterialTexteditDensity);
             density.setEnabled(false);
 

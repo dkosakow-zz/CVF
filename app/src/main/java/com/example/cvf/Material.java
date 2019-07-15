@@ -8,7 +8,6 @@ import org.apache.commons.math3.linear.*;
 
 import static org.apache.commons.math3.linear.MatrixUtils.createRealMatrix;
 import static org.apache.commons.math3.linear.MatrixUtils.inverse;
-import static org.apache.commons.math3.linear.MatrixUtils.solveUpperTriangularSystem;
 
 /**
  * The Material class from which all material objects get their characteristics
@@ -32,33 +31,55 @@ public class Material {
     private double thermalExpansion2 = 0.0; //Coefficient of Thermal Expansion 2 (1/K)
     private double density = 0.0;           //Density (g/cc)
     private boolean allowEdit = false;      //allow user to edit, kind of like administrator privileges
-    private Type type;                      //Isotropic, Transverse, Orthotropic, or Anisotropic
-    private double[][] elasticProperties;
+    private SymmetryType symmetryType;      //Isotropic, Transverse, Orthotropic, or Anisotropic
+    private FiberType fiberType;            //Fiber, Matrix, Filler, Other
+    private double[][] elasticProperties;   //The basic elastic properties of the material
     private double[][] complianceTensor = new double[6][6];
     private double[][] stiffnessTensor = new double[6][6];
 
-    public enum Type {
+    public enum SymmetryType {
         //Constants
         ISOTROPIC("isotropic"),
         TRANSVERSE("transverse"),
         ORTHOTROPIC("orthotropic"),
         ANISOTROPIC("anisotropic");
         public final String symmetry;
-
-        Type(String symmetry) {
+        SymmetryType(String symmetry) {
             this.symmetry = symmetry;
+        }   //label
+    }   //Type
+
+    public enum FiberType {
+        //Constants
+        FIBER("fiber"),
+        FILLER("filler"),
+        MATRIX("matrix"),
+        OTHER("other");
+        public final String type;
+        FiberType(String type) {
+            this.type = type;
         }   //label
     }   //Type
 
     public Material() {
         this.name = "New Material";
+        fiberType = fiberType.OTHER;
     }   //empty constructor
 
-    public Material(double[][] properties, Type type, String name) {
+    public FiberType getFiberType() {
+        return this.fiberType;
+    }   //getFiberType()
+
+    public void setFiberType(FiberType fiberType) {
+        this.fiberType = fiberType;
+    }   //setFiberType
+
+    Material(double[][] properties, SymmetryType symmetryType, FiberType fiberType, String name) {
         this.setName(name);
-        this.setType(type);
+        this.setSymmetryType(symmetryType);
+        this.setFiberType(fiberType);
         this.elasticProperties = properties.clone();
-        if (type == Type.ORTHOTROPIC) {
+        if (symmetryType == SymmetryType.ORTHOTROPIC) {
             this.complianceTensor = this.computeTensor();
             this.stiffnessTensor = inverse(createRealMatrix(this.complianceTensor)).getData();
         } else {
@@ -67,13 +88,13 @@ public class Material {
         }   //if orthotropic
     }   //full material constructor
 
-    public double[][] computeTensor() {
+    double[][] computeTensor() {
         double[][] tensor = new double[6][6];
         System.out.println(this.toString());
         if (this.elasticProperties.length == 6 && this.elasticProperties[0].length == 6) {
             tensor = this.elasticProperties;
         }   //if already a tensor?
-        switch (this.type) {
+        switch (this.symmetryType) {
             case ISOTROPIC:
                 double young = this.elasticProperties[0][0];
                 double poisson = this.elasticProperties[0][1];
@@ -265,11 +286,11 @@ public class Material {
         this.allowEdit = allowEdit;
     }   //setAllowEdit()
 
-    public Type getType() {
-        return type;
+    public SymmetryType getSymmetryType() {
+        return symmetryType;
     }   //getType()
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setSymmetryType(SymmetryType type) {
+        this.symmetryType = type;
     }   //setType()
 }   //Material

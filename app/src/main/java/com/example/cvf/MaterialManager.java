@@ -1,5 +1,6 @@
 package com.example.cvf;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.AppBarLayout;
@@ -9,11 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.util.DisplayMetrics;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +40,6 @@ public class MaterialManager extends AppCompatActivity {
 
         //Material Spinner
         final Spinner materialSpinner = (Spinner) findViewById(R.id.materialSpinner1);
-
         ArrayList<String> materialList = new ArrayList<>();
         for (Material object : MaterialLibrary.materials) {
             materialList.add(object.getName());
@@ -51,6 +51,5 @@ public class MaterialManager extends AppCompatActivity {
         //Text
         final TextView materialName = (TextView) findViewById(R.id.materialTextviewName);
         materialName.setEnabled(false);
-
     }   //onCreate(Bundle)
 }   //MaterialManager

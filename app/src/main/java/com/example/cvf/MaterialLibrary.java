@@ -29,23 +29,22 @@ class MaterialLibrary {
     private static double[][] grafil70034 = {{234e3, 12450, 0.291, 0.206, 25e3, 2e-6, 5e-6, 1.8}};
     private static double[][] kevlar = {{154e3, 4200, 0.35, 0.3, 2900, -4e-6, -4e-6, 1.47}};    //www.mse.mtu.edu/~drjohn/my4150/props.html
 
-    private static Material Epoxy = new Material(epoxy, Material.Type.ISOTROPIC, "Epoxy");
-    private static Material ClassAPVE = new Material(classAPVE, Material.Type.ISOTROPIC, "Class A PVE");
-    private static Material VinylEster = new Material(vinylEster, Material.Type.ISOTROPIC, "Vinyl Ester");
-    private static Material Polyester = new Material(polyester, Material.Type.ISOTROPIC, "Polyester");
-    private static Material PPS = new Material(pps, Material.Type.ISOTROPIC, "PPS");
-    private static Material ABS = new Material(abs, Material.Type.ISOTROPIC, "ABS");
-    private static Material PET = new Material(pet, Material.Type.ISOTROPIC, "PET");
-    private static Material Nylon = new Material(nylon, Material.Type.ISOTROPIC, "Nylon");
-    private static Material Peek = new Material(peek, Material.Type.ISOTROPIC, "Peek");
-    private static Material EGlass = new Material(eGlass, Material.Type.ISOTROPIC, "E-Glass");
-    private static Material SGlass = new Material(sGlass, Material.Type.ISOTROPIC, "S-Glass");
-    private static Material Basalt = new Material(basalt, Material.Type.ISOTROPIC, "Basalt");
-
-    private static Material Carbon = new Material(carbon, Material.Type.TRANSVERSE, "Carbon");  //IM7 from Mike's papers
-    private static Material A42 = new Material(a42, Material.Type.TRANSVERSE, "A42");
-    private static Material Grafil70034 = new Material(grafil70034, Material.Type.TRANSVERSE, "Grafil 700-34");
-    private static Material Kevlar = new Material(kevlar, Material.Type.TRANSVERSE, "Kevlar");
+    private static Material Epoxy = new Material(epoxy, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "Epoxy");
+    private static Material ClassAPVE = new Material(classAPVE, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "Class A PVE");
+    private static Material VinylEster = new Material(vinylEster, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "Vinyl Ester");
+    private static Material Polyester = new Material(polyester, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "Polyester");
+    private static Material PPS = new Material(pps, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "PPS");
+    private static Material ABS = new Material(abs, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "ABS");
+    private static Material PET = new Material(pet, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "PET");
+    private static Material Nylon = new Material(nylon, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "Nylon");
+    private static Material Peek = new Material(peek, Material.SymmetryType.ISOTROPIC, Material.FiberType.MATRIX, "Peek");
+    private static Material EGlass = new Material(eGlass, Material.SymmetryType.ISOTROPIC, Material.FiberType.FIBER, "E-Glass");
+    private static Material SGlass = new Material(sGlass, Material.SymmetryType.ISOTROPIC, Material.FiberType.FIBER, "S-Glass");
+    private static Material Basalt = new Material(basalt, Material.SymmetryType.ISOTROPIC, Material.FiberType.FIBER, "Basalt");
+    private static Material Carbon = new Material(carbon, Material.SymmetryType.TRANSVERSE, Material.FiberType.FIBER, "Carbon");  //IM7 from Mike's papers
+    private static Material A42 = new Material(a42, Material.SymmetryType.TRANSVERSE, Material.FiberType.FIBER, "A42");
+    private static Material Grafil70034 = new Material(grafil70034, Material.SymmetryType.TRANSVERSE, Material.FiberType.FIBER, "Grafil 700-34");
+    private static Material Kevlar = new Material(kevlar, Material.SymmetryType.TRANSVERSE, Material.FiberType.FIBER, "Kevlar");
     //</editor-fold>
 
     public static ArrayList<Material> materials = new ArrayList<Material>() {{

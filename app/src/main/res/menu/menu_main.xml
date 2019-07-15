@@ -8,5 +8,11 @@
         android:orderInCategory="102"
         android:title="@string/settings"
         android:titleCondensed="Settings"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/otherMaterialmanager"
+        android:orderInCategory="3"
+        android:title="@string/material_manager"
+        app:showAsAction="never" />
 </menu>
