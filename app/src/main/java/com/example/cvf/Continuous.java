@@ -50,7 +50,6 @@ public class Continuous extends AppCompatActivity {
         adapter.AddFragment(new FragmentContinuousProperties(), "Homogeneous Properties");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
         //TODO
     }   //onCreate(Bundle)
 
@@ -70,7 +69,7 @@ public class Continuous extends AppCompatActivity {
                 //startActivity(new Intent(Continuous.this, -------.class));
                 break;
             case R.id.otherMaterialmanager:
-                startActivity(new Intent(Continuous.this, MaterialManager.class));
+                startActivity(new Intent(getApplicationContext(), MaterialManager.class));
                 break;
         }   //switch (item.getItemId())
         return super.onOptionsItemSelected(item);
@@ -83,7 +82,7 @@ public class Continuous extends AppCompatActivity {
             super.onActivityCreated(savedInstanceState);
             Spinner materialSpinner1 = (Spinner) getView().findViewById(R.id.continuousMaterialSpinnerMaterial);
             ArrayList<String> materialList1 = new ArrayList<>();
-            for (Material object : MaterialLibrary.materials) {
+            for (Material object : Library.materials) {
                 if (object.getFiberType() == Material.FiberType.FIBER) {
                     materialList1.add(object.getName());
                 }   //if FiberType is FIBER
@@ -106,7 +105,7 @@ public class Continuous extends AppCompatActivity {
             materialSpinner1.setAdapter(adapterSpinner1);
             Spinner materialSpinner2 = (Spinner) getView().findViewById(R.id.continuousMaterialSpinnerMaterial2);
             ArrayList<String> materialList2 = new ArrayList<>();
-            for (Material object : MaterialLibrary.materials) {
+            for (Material object : Library.materials) {
                 if (object.getFiberType() == Material.FiberType.MATRIX) {
                     materialList2.add(object.getName());
                 } //if FiberType is MATRIX

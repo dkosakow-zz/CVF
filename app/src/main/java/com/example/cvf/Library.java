@@ -1,14 +1,13 @@
 package com.example.cvf;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 /**
- * The MaterialLibrary hosts the data for all the default materials and instantiates an ArrayList of materials to use
+ * Library hosts the data for all the default materials and units and instantiates static <c>ArrayList</c> for access.
  *
  * @author David Kosakowski, dkosakow@purdue.edu
  * @version 06/14/2019
  */
-class MaterialLibrary {
+class Library {
     //<editor-fold desc="Default Materials & Properties">
                                     //E1    v12     a1      density
     private static double[][] epoxy = {{3500, 0.33, 0.55e-6, 1.54}};
@@ -52,4 +51,64 @@ class MaterialLibrary {
         add(ABS); add(PET); add(Nylon); add(Peek); add(EGlass); add(SGlass);
         add(Basalt); add(Carbon); add(A42); add(Grafil70034); add(Kevlar);
     }};
-}   //MaterialLibrary.java
+
+    //<editor-fold desc="Unit Conversion factors">
+    public enum unitsStress {
+        Pa(1),
+        kPa(1e-3),
+        MPa(1e-6),
+        GPa(1e-9),
+        psi(1.4503774e-4),
+        ksi(1.4503774e-7),
+        Msi(1.4503774e-10);
+        public final double factor;
+        unitsStress(double factor) {
+            this.factor = factor;
+        }
+    }   //Stress units
+
+    public enum unitsForce {
+        N(1),
+        kN(1e-3),
+        lbf(0.224808944);
+        public final double factor;
+        unitsForce(double factor) {
+            this.factor = factor;
+        }
+    }   //Force units
+
+    public enum unitsDistance {
+        mm(1),
+        m(1e-3),
+        cm(0.1),
+        in(0.03937078),
+        ft(0.003280839895);
+        public final double factor;
+        unitsDistance(double factor) {
+            this.factor = factor;
+        }
+    }   //Distance units
+
+    public enum unitsTemperature {
+        K(1),
+        C(1),
+        F(1.8);
+        public final double factor;
+        unitsTemperature(double factor) {
+            this.factor = factor;
+        }
+    }   //Temperature units
+
+    public enum unitsDensity {
+        gcc(1),
+        kgm3(1e3),
+        mgmm3(1e-9),
+        lbin3(0.036127292),
+        lbft3(62.4279605761);
+        public final double factor;
+        unitsDensity(double factor) {
+            this.factor = factor;
+        }
+    }   //Density units
+    //</editor-fold>
+}   //Library.java

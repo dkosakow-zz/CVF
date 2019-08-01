@@ -1,178 +1,375 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/materialConstraintlayout"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/materialSpinner1"
-        android:layout_width="160sp"
-        android:layout_height="48sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:spinnerMode="dialog"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/materialButtonAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/add_material"
-        app:layout_constraintStart_toEndOf="@+id/materialSpinner1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:id="@+id/materialScrollview"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/materialConstraintlayout"
         android:layout_width="match_parent"
-        android:layout_height="480sp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialSpinner1">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/materialLinearlayout"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="400sp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/materialConstraintlayout2"
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/materialToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="600sp">
+                android:layout_height="wrap_content"
+                android:background="@color/tab"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
+        </android.support.design.widget.AppBarLayout>
 
-                <Switch
-                    android:id="@+id/materialSwitchEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/allow_edit"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/materialRadiogroup" />
+        <Spinner
+            android:id="@+id/materialSpinner1"
+            android:layout_width="160sp"
+            android:layout_height="48sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:spinnerMode="dialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
 
-                <TextView
-                    android:id="@+id/materialTextviewE1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="24dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:selectAllOnFocus="true"
-                    android:text="@string/e1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTexteditName" />
+        <ScrollView
+            android:id="@+id/materialScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="480sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialSpinner1">
 
-                <TextView
-                    android:id="@+id/materialTextviewE2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/e2"
-                    app:layout_constraintStart_toStartOf="@+id/materialTextviewE1"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewE1" />
+            <LinearLayout
+                android:id="@+id/materialLinearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="400sp"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/materialTextviewG12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/g12"
-                    app:layout_constraintStart_toStartOf="@+id/materialTextviewE2"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewE2" />
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/materialConstraintlayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="560sp">
 
-                <TextView
-                    android:id="@+id/materialTextviewV12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/v12"
-                    app:layout_constraintStart_toStartOf="@+id/materialTextviewG12"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewG12" />
+                    <Switch
+                        android:id="@+id/materialSwitchEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/allow_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/materialRadiogroup" />
 
-                <TextView
-                    android:id="@+id/materialTextviewV23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/v23"
-                    app:layout_constraintStart_toStartOf="@+id/materialTextviewV12"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewV12" />
-
-                <TextView
-                    android:id="@+id/materialTextviewA1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/a1"
-                    app:layout_constraintStart_toStartOf="@id/materialTextviewV23"
-                    app:layout_constraintTop_toBottomOf="@id/materialTextviewV23" />
-
-                <TextView
-                    android:id="@+id/materialTextviewA2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/a2"
-                    app:layout_constraintStart_toStartOf="@id/materialTextviewA1"
-                    app:layout_constraintTop_toBottomOf="@id/materialTextviewA1" />
-
-                <EditText
-                    android:id="@+id/materialTexteditName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="textPersonName"
-                    android:text="Name"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <RadioGroup
-                    android:id="@+id/materialRadiogroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextviewA2">
-
-                    <RadioButton
-                        android:id="@+id/materialRadiobuttonFiber"
-                        android:layout_width="72dp"
+                    <TextView
+                        android:id="@+id/materialTextviewE1"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Fiber" />
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/e1"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditName" />
 
-                    <RadioButton
-                        android:id="@+id/materialRadiobuttonMatrix"
-                        android:layout_width="78dp"
+                    <EditText
+                        android:id="@+id/materialTexteditE1data"
+                        android:layout_width="128sp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Matrix" />
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="14dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toEndOf="@+id/materialTextviewE1"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditName" />
 
-                    <RadioButton
-                        android:id="@+id/materialRadiobuttonFiller"
-                        android:layout_width="72dp"
+                    <TextView
+                        android:id="@+id/materialTextviewE1data"
+                        android:layout_width="128sp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Filler" />
-                </RadioGroup>
+                        android:layout_marginStart="36dp"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toEndOf="@+id/materialTextviewE1"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewE1" />
 
-            </android.support.constraint.ConstraintLayout>
-        </LinearLayout>
-    </ScrollView>
+                    <TextView
+                        android:id="@+id/materialTextviewE2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/e2"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTextviewE1"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTextviewE1" />
 
-</android.support.constraint.ConstraintLayout>
+                    <EditText
+                        android:id="@+id/materialTexteditE2data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditE1data"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditE1data" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewE2data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditE1data"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewE2" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewG12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/g12"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTextviewE2"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTextviewE2" />
+
+                    <EditText
+                        android:id="@+id/materialTexteditG12data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditE2data"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditE2data" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewG12data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditE2data"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewG12" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewV12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/v12"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTextviewG12"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTextviewG12" />
+
+                    <EditText
+                        android:id="@+id/materialTexteditV12data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditG12data"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditG12data" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewV12data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditG12data"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewV12" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewV23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/v23"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTextviewV12"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTextviewV12" />
+
+                    <EditText
+                        android:id="@+id/materialTexteditV23data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditV12data"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditV12data" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewV23data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditV12data"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewV23" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewA1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/a1"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@id/materialTextviewV23"
+                        app:layout_constraintTop_toBottomOf="@id/materialTextviewV23" />
+
+                    <EditText
+                        android:id="@+id/materialTexteditA1data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditV23data"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditV23data" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewA1data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditV23data"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewA1" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewA2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/a2"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@id/materialTextviewA1"
+                        app:layout_constraintTop_toBottomOf="@id/materialTextviewA1" />
+
+                    <EditText
+                        android:id="@+id/materialTexteditA2data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditA1data"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditA1data" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewA2data"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditA1data"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewA2" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewDensity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="\u03C1 = "
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@id/materialTextviewA2"
+                        app:layout_constraintTop_toBottomOf="@id/materialTextviewA2" />
+
+                    <EditText
+                        android:id="@+id/materialTexteditDensitydata"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditA2data"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditA2data" />
+
+                    <TextView
+                        android:id="@+id/materialTextviewDensitydata"
+                        android:layout_width="128sp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text=""
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/materialTexteditA2data"
+                        app:layout_constraintTop_toTopOf="@+id/materialTextviewDensity" />
+
+                    <EditText
+                        android:id="@+id/materialTexteditName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:ems="10"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        android:text="Name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/materialRadiogroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/materialTexteditDensitydata">
+
+                        <RadioButton
+                            android:id="@+id/materialRadiobuttonFiber"
+                            android:layout_width="72dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Fiber" />
+
+                        <RadioButton
+                            android:id="@+id/materialRadiobuttonMatrix"
+                            android:layout_width="78dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Matrix" />
+
+                        <RadioButton
+                            android:id="@+id/materialRadiobuttonFiller"
+                            android:layout_width="72dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Filler" />
+                    </RadioGroup>
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="108sp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/materialTextviewE1"
+                        app:layout_constraintStart_toEndOf="@+id/materialTextviewE1data" />
+
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>

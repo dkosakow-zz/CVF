@@ -1,11 +1,5 @@
 package com.example.cvf;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.jar.Attributes;
-
-import org.apache.commons.math3.linear.*;
-
 import static org.apache.commons.math3.linear.MatrixUtils.createRealMatrix;
 import static org.apache.commons.math3.linear.MatrixUtils.inverse;
 
@@ -83,6 +77,21 @@ public class Material {
             this.complianceTensor = this.computeTensor();
             this.stiffnessTensor = inverse(createRealMatrix(this.complianceTensor)).getData();
         } else {
+            if (symmetryType == SymmetryType.ISOTROPIC) {
+                setYoungsModulus1(properties[0][0]);
+                setPoissonsRatio12(properties[0][1]);
+                setThermalExpansion1(properties[0][2]);
+                setDensity(properties[0][3]);
+            } else if (symmetryType == SymmetryType.TRANSVERSE) {
+                setYoungsModulus1(properties[0][0]);
+                setYoungsModulus1(properties[0][1]);
+                setPoissonsRatio12(properties[0][2]);
+                setPoissonsRatio23(properties[0][3]);
+                setShearModulus12(properties[0][4]);
+                setThermalExpansion1(properties[0][5]);
+                setThermalExpansion1(properties[0][6]);
+                setDensity(properties[0][7]);
+            }
             this.stiffnessTensor = this.computeTensor();
             this.complianceTensor = inverse(createRealMatrix(this.stiffnessTensor)).getData();
         }   //if orthotropic

@@ -17,6 +17,7 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>
@@ -31,6 +32,7 @@
             android:label="@string/button1"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.CONT" />
@@ -43,6 +45,7 @@
             android:label="@string/button2"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SFRP" />
@@ -55,6 +58,7 @@
             android:name=".Laminate"
             android:label="@string/button3"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MainActivity">
             <intent-filter>
@@ -68,12 +72,15 @@
             android:name=".MaterialManager"
             android:label="@string/material_manager"
             android:screenOrientation="portrait"
-            android:theme="@style/Popup">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAMA"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
